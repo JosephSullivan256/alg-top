@@ -2,7 +2,9 @@
 
 Tool for computing topological invariants of level sets of submersions.
 
-# Goals
+[Check it out!](https://josephsullivan256.github.io/alg-top/)
+
+## Goals
 
 - Compute (approximate) triangulation of submanifolds in Euclidean space which are level sets of submersion
     - Following approach in [this paper](https://doi.org/10.1016/S0021-9991(03)00275-4)
@@ -13,9 +15,9 @@ Tool for computing topological invariants of level sets of submersions.
 - Create a Linear/Abstract Algebra library to handle relevant computations discussed above.
 - Have an editor for building submersions then compute triangulations/homology.
 
-# Building
+## Building
 
-## Native
+### Native
 
 Run
 
@@ -23,7 +25,7 @@ Run
 
 and you're good to go.
 
-## For Web
+### For Web
 
 You'll need
 - [wasm-pack](https://rustwasm.github.io/wasm-pack/)
@@ -39,6 +41,6 @@ Then, start the server by running
 
 and go to [http://localhost:8080/index.html](http://localhost:8080/index.html).
 
-# License
+## License
 
 Licensed under the MIT license (LICENSE-MIT or http://opensource.org/licenses/MIT).
