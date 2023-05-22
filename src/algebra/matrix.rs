@@ -1,6 +1,8 @@
-use std::{fmt::Display, ops::{Index, IndexMut}};
+use std::{fmt::Display, ops::{Index, IndexMut, Mul, MulAssign, AddAssign, Sub, Neg, SubAssign, Add}};
 
 use crate::algebra::ring_traits::Ring;
+
+use super::ring_traits::{Zero, One, AddGroup};
 
 
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -85,7 +87,113 @@ impl<T> Mat<T>
 where
     T: Ring,
 {
+    fn zero(n: usize) -> Mat<T> {
+        Mat::new_with_value(n, n, T::zero())
+    }
 
+    fn one(n: usize) -> Mat<T> {
+        let mut mat = Mat::new_with_value(n, n, T::zero());
+        for i in 0..n {
+            mat[(i, i)] = T::one()
+        }
+        mat
+    }
+}
+
+impl<T> Add for Mat<T>
+where
+    T: AddGroup,
+{
+    type Output = Mat<T>;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        let mut clone = self.clone();
+        clone += rhs;
+        clone
+    }
+}
+
+impl<T> AddAssign<Self> for Mat<T>
+where
+    T: AddGroup,
+{
+    fn add_assign(&mut self, rhs: Self) {
+        for row in 0..self.rows {
+            for col in 0..self.cols {
+                self[(row, col)] += rhs[(row,col)].clone();
+            }
+        }
+    }
+}
+
+impl<T> Neg for Mat<T>
+where
+    T: AddGroup,
+{
+    type Output = Mat<T>;
+
+    fn neg(self) -> Self::Output {
+        let mut clone = self.clone();
+        for row in 0..self.rows {
+            for col in 0..self.cols {
+                clone[(row, col)] = -self[(row,col)].clone();
+            }
+        }
+        clone
+    }
+}
+
+impl<T> Sub for Mat<T>
+where
+    T: AddGroup,
+{
+    type Output = Mat<T>;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        self + (-rhs)
+    }
+}
+
+impl<T> SubAssign for Mat<T>
+where
+    T: AddGroup,
+{
+    fn sub_assign(&mut self, rhs: Self) {
+        for row in 0..self.rows {
+            for col in 0..self.cols {
+                self[(row, col)] -= rhs[(row,col)].clone();
+            }
+        }
+    }
+}
+
+impl<T> Mul for Mat<T>
+where
+    T: Ring,
+{
+    type Output = Mat<T>;
+
+    fn mul(self, rhs: Self) -> Self::Output {
+        let mut prod = Mat::new_with_value(self.rows, rhs.cols, T::zero());
+        for row in 0..self.rows {
+            for col in 0..rhs.cols {
+                prod[(row, col)] = (0..self.cols)
+                    .map(|i| self[(row, i)].clone() * rhs[(i, col)].clone())
+                    .reduce(|acc, e| acc + e).unwrap();
+            }
+        }
+        prod
+    }
+}
+
+impl<T> MulAssign for Mat<T>
+where
+    T: Ring,
+{
+    fn mul_assign(&mut self, rhs: Self) {
+        let clone = self.clone();
+        self.entries = (rhs * clone).entries;
+    }
 }
 
 
@@ -103,5 +211,23 @@ mod tests {
             5, 6,
         ]);
         assert_eq!(mat.to_string(), "[\n    [1, 2],\n    [3, 4],\n    [5, 6]\n]\n");
+    }
+
+    #[test]
+    fn test_mat_mul() {
+        let m1 = Mat::new(2, 3, vec![
+            1, 2, 3,
+            4, 5, 6
+        ]);
+        let m2 = Mat::new(3, 1, vec![
+            7,
+            8,
+            9
+        ]);
+        let m3 = Mat::new(2, 1, vec![
+            50,
+            122
+        ]);
+        assert_eq!(m1*m2, m3);
     }
 }

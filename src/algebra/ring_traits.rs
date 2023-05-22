@@ -1,4 +1,4 @@
-use std::ops::{Add, Neg, Sub, AddAssign, SubAssign, Mul, MulAssign};
+use std::ops::{Add, Neg, Sub, AddAssign, SubAssign, Mul, MulAssign, Div, DivAssign};
 
 
 pub trait Zero {
@@ -9,9 +9,13 @@ pub trait One {
     fn one() -> Self;
 }
 
-pub trait Ring: Sized + Clone
+pub trait AddGroup: Sized + Clone
     + Add<Self, Output = Self> + AddAssign<Self> + Zero
     + Neg<Output = Self> + Sub<Self, Output = Self> + SubAssign<Self>
+{}
+
+pub trait Ring: Sized + Clone
+    + AddGroup
     + Mul<Self, Output = Self> + MulAssign<Self> + One
 {
     fn from(n: isize) -> Self {
@@ -39,6 +43,7 @@ pub trait EuclDomain: Ring {
 
 impl Zero for i32 { fn zero() -> Self { 0 } }
 impl One for i32 { fn one() -> Self { 1 } }
+impl AddGroup for i32 {}
 impl Ring for i32 {}
 
 impl EuclDomain for i32 {
@@ -50,6 +55,31 @@ impl EuclDomain for i32 {
         (self.div_euclid(*b), self.rem_euclid(*b))
     }
 }
+
+pub trait Field: EuclDomain + Div<Self, Output = Self> + DivAssign<Self> {}
+
+impl Zero for f32 {
+    fn zero() -> Self {
+        0f32
+    }
+}
+impl One for f32 {
+    fn one() -> Self {
+        1f32
+    }
+}
+impl AddGroup for f32 {}
+impl Ring for f32 {}
+impl EuclDomain for f32 {
+    fn eucl_norm(&self) -> u32 {
+        0
+    }
+
+    fn eucl_div(&self, b: &Self) -> (Self, Self) {
+        ((self/b), 0f32)
+    }
+}
+impl Field for f32 {}
 
 #[cfg(test)]
 mod tests {
