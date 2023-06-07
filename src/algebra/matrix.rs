@@ -7,8 +7,8 @@ use super::ring_traits::{Zero, One, AddGroup};
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Mat<T> {
-    rows: usize,
-    cols: usize,
+    pub rows: usize,
+    pub cols: usize,
     entries: Vec<T>,
 }
 
@@ -37,6 +37,18 @@ where
             cols,
             entries,
         }
+    }
+
+    pub fn transpose(&self) -> Mat<T> {
+        let mut transpose_mat = self.clone();
+        transpose_mat.cols = self.rows;
+        transpose_mat.rows = self.cols;
+        for row in 0..transpose_mat.rows {
+            for col in 0..transpose_mat.cols {
+                transpose_mat[(row,col)] = self[(col, row)].clone();
+            }
+        }
+        transpose_mat
     }
 }
 
@@ -87,6 +99,12 @@ impl<T> Mat<T>
 where
     T: Ring,
 {
+    pub fn ei(dim: usize, index: usize) -> Mat<T> {
+        let mut vector = Mat::new_with_value(dim, 1, T::zero());
+        vector[(index, 0)] = T::one();
+        vector
+    }
+
     fn zero(n: usize) -> Mat<T> {
         Mat::new_with_value(n, n, T::zero())
     }
@@ -167,6 +185,23 @@ where
     }
 }
 
+impl<T> Mul<T> for Mat<T>
+where
+    T: Ring,
+{
+    type Output = Mat<T>;
+
+    fn mul(self, rhs: T) -> Self::Output {
+        let mut clone = self.clone();
+        for row in 0..self.rows {
+            for col in 0..self.cols {
+                clone[(row, col)] *= rhs.clone();
+            }
+        }
+        clone
+    }
+}
+
 impl<T> Mul for Mat<T>
 where
     T: Ring,
@@ -202,7 +237,7 @@ where
 mod tests {
     use super::*;
     use std::string::ToString;
-
+    
     #[test]
     fn test_mat_display() {
         let mat = Mat::new(3, 2, vec![
@@ -229,5 +264,15 @@ mod tests {
             122
         ]);
         assert_eq!(m1*m2, m3);
+    }
+
+    #[test]
+    fn test_ei() {
+        let e2 = Mat::new(3, 1, vec![
+            0,
+            1,
+            0
+        ]);
+        assert_eq!(e2, Mat::ei(3, 1));
     }
 }

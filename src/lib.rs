@@ -2,6 +2,7 @@
 mod main;
 pub mod algebra;
 pub mod topology;
+pub mod convex;
 
 // Entry point for wasm
 #[cfg(target_arch = "wasm32")]
