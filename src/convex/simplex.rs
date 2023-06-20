@@ -1,6 +1,6 @@
-use std::iter::{repeat, Map, once};
+use std::iter::once;
 
-use itertools::{Itertools, MultiProduct};
+use itertools::Itertools;
 
 use crate::algebra::matrix::Mat;
 
@@ -17,7 +17,7 @@ pub struct Simplex(Vec<Mat<f32>>);
 
 pub fn cube_iterator(dim: usize, len: usize) -> impl Iterator<Item=Mat<f32>>
 {
-    (0..dim).map(|x| (0..len).map(|x| x as f32))
+    (0..dim).map(|_| (0..len).map(|x| x as f32))
         .multi_cartesian_product()
         .map(move |coord| Mat::new(dim, 1, coord))
 }
@@ -67,11 +67,17 @@ mod tests {
 
     #[test]
     fn test_kuhn_triangulation() {
-        for simp in kuhn_triangulation(Mat::new_with_value(3, 1, 0f32)) {
-            println!("simp");
-            for vert in simp.0 {
-                println!("{}", vert);
-            }
+        // for simp in kuhn_triangulation(Mat::new_with_value(3, 1, 0f32)) {
+        //     println!("simp");
+        //     for vert in simp.0 {
+        //         println!("{}", vert);
+        //     }
+        // }
+
+        let mut factorial = 1;
+        for i in 1..6 {
+            factorial *= i;
+            assert_eq!(kuhn_triangulation(Mat::new_with_value(i, 1, 0f32)).count(), factorial);
         }
     }
 }
