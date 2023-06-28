@@ -1,0 +1,13 @@
+C:\Users\Joseph\Documents\programmming\rust\algtop\target\debug\deps\half-fd717e52e7249359.rmeta: C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\lib.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\bfloat.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\bfloat\convert.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\binary16.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\binary16\convert.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\leading_zeros.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\num_traits.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\slice.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\vec.rs
+
+C:\Users\Joseph\Documents\programmming\rust\algtop\target\debug\deps\half-fd717e52e7249359.d: C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\lib.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\bfloat.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\bfloat\convert.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\binary16.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\binary16\convert.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\leading_zeros.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\num_traits.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\slice.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\vec.rs
+
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\lib.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\bfloat.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\bfloat\convert.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\binary16.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\binary16\convert.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\leading_zeros.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\num_traits.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\slice.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\half-2.2.1\src\vec.rs:

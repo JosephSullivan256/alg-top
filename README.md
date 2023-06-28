@@ -1,8 +1,8 @@
-# alg-top
+# implicit-manifold
 
-Tool for computing topological invariants of level sets of submersions.
+Tool for computing topological invariants of level sets of submersions, i.e., implicit manifolds.
 
-[Check it out!](https://josephsullivan256.github.io/alg-top/)
+[Check it out!](https://josephsullivan256.github.io/implicit-manifold/implicit-manifold-render/)
 
 ## Goals
 
@@ -15,31 +15,28 @@ Tool for computing topological invariants of level sets of submersions.
 - Create a Linear/Abstract Algebra library to handle relevant computations discussed above.
 - Have an editor for building submersions then compute triangulations/homology.
 
-## Building
+## Organization
 
-### Native
+There are two cargo packages: `implicit-manifold-compute` and `implicit-manifold-render`. The former comes up with the triangulation and computes the topological invariants, the latter is a demo that renders the triangulations/allows you to play with implicit surfaces, seeing the real time changes in the topology.
 
-Run
+## Progress
 
-`cargo run`
+There's quite a bit left to do.
 
-and you're good to go.
+- [ ] Linear algebra 
+    - [X] basic matrix operations (over integers/floats)
+    - [ ] Smith Normal Form
+- [ ] Marching simplices
+    - [X] get Kuhn triangulation
+    - [ ] intersect Kuhn triangulation with hyperplane approximations
+- [ ] Topology
+    - [ ] collect data from marching simplices to a delta complex
+    - [ ] compute simplicial homology using Smith Normal Form
+- [ ] Visualization
+    - [ ] adapt three-d wireframe example to test out Kuhn triangulation
+    - [ ] create UI for inputting functions to compute implicit surfaces
 
-### For Web
-
-You'll need
-- [wasm-pack](https://rustwasm.github.io/wasm-pack/)
-- a web server (I'm using [http-server](https://www.npmjs.com/package/http-server))
-
-First build the project by running
-
-`wasm-pack build --target web --out-name web --out-dir ./pkg`
-
-Then, start the server by running
-
-`npx http-server`
-
-and go to [http://localhost:8080/index.html](http://localhost:8080/index.html).
+This is my basic outline/TODO list, but more things will inevitably arise as I start checking things off.
 
 ## License
 

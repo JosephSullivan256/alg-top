@@ -1,0 +1,11 @@
+C:\Users\Joseph\Documents\programmming\rust\algtop\target\wasm32-unknown-unknown\release\deps\approx-ca7f2e9ac4c33c8a.rmeta: C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\lib.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\abs_diff_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\relative_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\ulps_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\macros.rs
+
+C:\Users\Joseph\Documents\programmming\rust\algtop\target\wasm32-unknown-unknown\release\deps\libapprox-ca7f2e9ac4c33c8a.rlib: C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\lib.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\abs_diff_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\relative_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\ulps_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\macros.rs
+
+C:\Users\Joseph\Documents\programmming\rust\algtop\target\wasm32-unknown-unknown\release\deps\approx-ca7f2e9ac4c33c8a.d: C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\lib.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\abs_diff_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\relative_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\ulps_eq.rs C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\macros.rs
+
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\lib.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\abs_diff_eq.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\relative_eq.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\ulps_eq.rs:
+C:\Users\Joseph\.cargo\registry\src\github.com-1ecc6299db9ec823\approx-0.4.0\src\macros.rs:

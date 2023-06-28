@@ -1,0 +1,1 @@
+C:\Users\Joseph\Documents\programmming\rust\implicit-manifold\implicit-manifold-render\target\wasm32-unknown-unknown\release\libimplicit_manifold.rlib: C:\Users\Joseph\Documents\programmming\rust\implicit-manifold\implicit-manifold-render\src\lib.rs C:\Users\Joseph\Documents\programmming\rust\implicit-manifold\implicit-manifold-render\src\main.rs
