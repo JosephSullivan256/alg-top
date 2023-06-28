@@ -33,7 +33,7 @@ There's quite a bit left to do.
     - [ ] collect data from marching simplices to a delta complex
     - [ ] compute simplicial homology using Smith Normal Form
 - [ ] Visualization
-    - [ ] adapt three-d wireframe example to test out Kuhn triangulation
+    - [X] adapt three-d wireframe example to test out Kuhn triangulation
     - [ ] create UI for inputting functions to compute implicit surfaces
 
 This is my basic outline/TODO list, but more things will inevitably arise as I start checking things off.

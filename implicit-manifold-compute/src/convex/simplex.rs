@@ -5,7 +5,9 @@ use itertools::Itertools;
 use crate::algebra::matrix::Mat;
 
 
-pub struct Simplex(Vec<Mat<f32>>);
+pub struct Simplex {
+    pub vertices : Vec<Mat<f32>>
+}
 
 /*
  * to perform "marching simplices", we need to do the following:
@@ -44,7 +46,7 @@ pub fn kuhn_triangulation(corner: Mat<f32>) -> impl Iterator<Item=Simplex>
                     directions[i] += prev;
                 }
 
-                Simplex(directions)
+                Simplex { vertices: directions }
             }   
         )
 }
